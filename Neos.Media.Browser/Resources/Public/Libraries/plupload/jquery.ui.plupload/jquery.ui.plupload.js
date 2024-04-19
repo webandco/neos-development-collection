@@ -491,7 +491,7 @@ $.widget("ui.plupload", {
 					break;
 			}
 
-			message += " <br /><i>" + plupload.xmlEncode(details) + "</i>";
+			message += " <br /><i>" + details + "</i>";
 
 			self._trigger('error', null, { up: up, error: err } );
 
@@ -1167,7 +1167,7 @@ $.widget("ui.plupload", {
 						return ext;
 
 					default:
-						return plupload.xmlEncode(file[$1] || '');
+						return file[$1] || '';
 				}
 			});
 		});
@@ -1313,7 +1313,7 @@ $.widget("ui.plupload", {
 					// Rename file and glue extension back on
 					if (e.keyCode === 13) {
 						file.name = nameInput.val() + ext;
-						nameSpan.text(file.name);
+						nameSpan.html(file.name);
 					}
 					nameInput.blur();
 				}
